@@ -15,7 +15,7 @@ Create your HTTPRequest as always, but sign the request before you send it.
     request.setMethod('POST');
     request.setHeader('Content-Type', 'application/json');
     request.setEndpoint('https://restapi-stage.snappayglobal.com/api/interop/GetPaymentDetails');
-    request.setBody('{"accountid":"1001665093","token":"fake-token"}');
+    request.setBody('{"accountid":"' + accountId + '","token":"fake-token"}');
     
     // Before sending, use nifty class to sign the request
     SnapPaySigGenerator.signRequest(request, username, password, accountId, merchantId, apiSecret);
